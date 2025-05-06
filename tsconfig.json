@@ -1,0 +1,13 @@
+{
+    "files": [],
+    "references": [
+        { "path": "./tsconfig.app.json" },
+        { "path": "./tsconfig.node.json" }
+    ],
+    "compilerOptions": {
+    "module": "ESNext",  // Use ES modules
+    "target": "ES6",     // Ensure ES6+ support for `import/export`
+    "jsx": "react-jsx",  // This is for React projects using JSX/TSX
+    "moduleResolution": "node"  // Proper module resolution for imports
+  },
+}

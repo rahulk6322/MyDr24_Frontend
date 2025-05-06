@@ -1,0 +1,90 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
+.contain {
+    max-width: 1441px;
+    margin: 0 auto;
+    padding: 0rem 2rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    /* margin: auto; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto', sans-serif;
+}
+
+body,
+p,
+a,
+span,
+div,
+button {
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+}
+
+.navbarscroll::-webkit-scrollbar {
+    display: none;
+}
+
+.overflow-x-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* CSS for loader */
+.loader {
+    width: 35px;
+    aspect-ratio: 1;
+    --_g: no-repeat radial-gradient(farthest-side, #000 94%, #0000);
+    background:
+        var(--_g) 0 0,
+        var(--_g) 100% 0,
+        var(--_g) 100% 100%,
+        var(--_g) 0 100%;
+    background-size: 40% 40%;
+    animation: l38 0.5s infinite;
+}
+
+@keyframes l38 {
+    100% {
+        background-position:
+            100% 0,
+            100% 100%,
+            0 100%,
+            0 0;
+    }
+}
+
+::placeholder {
+    color: red;
+    opacity: 1; /* Firefox */
+}
+
+input[type='file'] {
+    display: none;
+}
+
+.custom-file-upload {
+    background: #e9ecef;
+    display: inline-block;
+    padding: 12px 12px;
+    cursor: pointer;
+    font-size: 12px;
+}
