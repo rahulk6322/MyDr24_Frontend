@@ -1,10 +1,12 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { BiCurrentLocation } from 'react-icons/bi'
 import { GrLocation } from 'react-icons/gr'
 import { IoIosArrowDown, IoIosArrowUp, IoMdPin } from 'react-icons/io'
 import { LuCalendarDays } from 'react-icons/lu'
 
 const BookAppointment: React.FC = () => {
+    const navigate = useNavigate()
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
     const [selectedCity, setSelectedCity] = useState('Cardiology')
 
@@ -118,7 +120,12 @@ const BookAppointment: React.FC = () => {
                 </div>
 
                 <div className="flex items-center justify-center">
-                    <button className="bg-[#a3a1a1] font-semibold min-h-[56px] mt-7 text-white px-6 py-3 rounded-full w-full">
+                    <button
+                        onClick={() =>
+                            navigate('/book?category=doctor_consultation')
+                        }
+                        className="bg-blue font-semibold min-h-[56px] mt-7 text-white px-6 py-3 rounded-full w-full hover:opacity-90"
+                    >
                         Submit
                     </button>
                 </div>
