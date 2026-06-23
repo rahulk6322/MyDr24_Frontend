@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import mycategory from '../../assets/images/servicies_offer_1.png'
 
 const categories = [
@@ -60,21 +61,22 @@ const ServicesOffered: React.FC = () => {
             </h2>
             <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                 {categories.map((category, index) => (
-                    <div>
-                        <div
-                            key={index}
-                            className="bg-white p-4 rounded-lg flex flex-col items-center"
-                        >
+                    <Link
+                        key={index}
+                        to="/book?category=home_healthcare"
+                        className="group"
+                    >
+                        <div className="bg-white p-4 rounded-lg flex flex-col items-center transition group-hover:shadow-md">
                             <img
                                 src={mycategory}
                                 alt={category.title}
                                 className="h-[80px] w-full object-contain"
                             />
                         </div>
-                        <h3 className="text-[14px] sm:text-[15.14px] font-semibold text-center mt-2">
+                        <h3 className="text-[14px] sm:text-[15.14px] font-semibold text-center mt-2 group-hover:text-blue">
                             {category.title}
                         </h3>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </section>

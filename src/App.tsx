@@ -27,6 +27,12 @@ import GetInTouchWithUs from './pages/GetInTouchWithUs'
 import HomeNursing from './pages/HomeNursing'
 import ElderCareHome from './pages/ElderCareHome'
 import WebRTC from './components/webRTC/WebRTC'
+import Booking from './pages/Booking'
+import BookingConfirmation from './pages/BookingConfirmation'
+import TrackBooking from './pages/TrackBooking'
+import MyBookings from './pages/MyBookings'
+import Emergency from './pages/Emergency'
+import FloatingActions from './components/booking/FloatingActions'
 function App() {
     const [isLoginOpen, setIsLoginOpen] = useState(false)
     const navbar = () => {
@@ -109,6 +115,16 @@ function App() {
 
                 <Route path="/home-nursing" element={<HomeNursing />} />
                 <Route path="/video-conference" element={<WebRTC />} />
+
+                {/* Dynamic booking, payment & tracking */}
+                <Route path="/book" element={<Booking />} />
+                <Route
+                    path="/booking-confirmation/:id"
+                    element={<BookingConfirmation />}
+                />
+                <Route path="/track/:id" element={<TrackBooking />} />
+                <Route path="/my-bookings" element={<MyBookings />} />
+                <Route path="/emergency" element={<Emergency />} />
                 {/* <Route element={<ProtectedRoutes />}>
           <Route path="/food" element={<FoodCopy />} />
           <Route path="/cart" element={<Cart />} />
@@ -120,6 +136,7 @@ function App() {
         <Route path="*" element={<Error404 />} /> */}
             </Routes>
             {footer()}
+            <FloatingActions />
 
             {/* Show the Login modal conditionally */}
             {isLoginOpen && (
